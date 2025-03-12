@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+/* ! main start */
+.main {
+  background-image: url(img/banner.jpg);
+  height: 100vh; /* bir ekran genişiliği kadar kaplayacak*/
+  background-position: center;
+  background-size: (
+    1200px,
+    100vw
+  ); /* ekran 1200px' e kadar resmi kırparak 1200px'e sabitler , 1200px den büyük bir ekran olursa ekranın tamamını resim  büyüyerek  kaplar (100vw) */
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* siyah kaplama */
+.cover {
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.5;
+}
+/*? header start */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  max-width: 60vw;
+  margin: 0 auto;
+  height: 100px;
+}
+
+.header img {
+  width: 130px;
+}
+
+.buttons,
+.logo {
+  z-index: 10;
+}
+
+.btn {
+  background-color: rgb(248, 248, 248, 0.05);
+  color: white;
+  padding: 3px 8px;
+  outline: none;
+  border: 1px solid white;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.4s all; /* animasyon geçiş hızı ve (all) tüm özellikleri için bunun olmasını istedim*/
+}
+
+.btn:hover {
+  background-color: red;
+  font-size: 20px;
+}
+
+.btn-red {
+  background-color: rgb(255 48 48);
+}
+
+.btn-red:hover {
+  background-color: rgb(248, 248, 248, 0.05);
+}
+
+.hero {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column; /* sütün şeklinde yukardan aşağı hizalar */
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  padding: 0 30px;
+  height: calc(
+    100vh - 100px
+  ); /* mevcüt olan ekran yüksekliğinden (100%) 100px (header yükesikliği) çıkart ve geri kalan alanı kapla */
+}
+
+.hero h1 {
+  font-size: 48px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.hero .first {
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+}
+.hero .second {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+.hero-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-buttons button {
+  padding: 8px 24px;
+  font-size: 16px;
+  transition: 0.4s all;
+}
+.hero-buttons button:hover {
+  background-color: rgb(248, 248, 248, 0.05);
+  font-size: 20px;
+}
+
+.hero-buttons input {
+  padding: 7px 101px 8px 14px;
+  font-size: 12px;
+  border-radius: 4px;
+  background-color: rgb(23, 23, 23, 0.7);
+  border: 1px solid rgb(197, 197, 197);
+  outline: none; /* tıklandığında gelen dış çerçeveyi kaldırdım*/
+  color: white;
+}
+
+/* elementleri ayıran separation divi */
+.separation {
+  border: 3px solid rgb(54, 54, 54);
+}
+
+/* ! info-area start */
+.info-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 70vw;
+  margin: 0 auto;
+}
+
+.info-area h1 {
+  font-size: 48px;
+  font-weight: bolder;
+}
+
+.info-area p {
+  font-size: 24px;
+  margin-top: 15px;
+}
+.info-img {
+  position: relative;
+}
+.info-img img {
+  position: relative;
+  width: 555px;
+  z-index: 10;
+}
+
+.info-img video {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  width: 475px;
+}
+
+/* Sıkça Sorulan Sorular */
+.faq {
+  padding: 35px;
+}
+.faq h2 {
+  font-size: 48px;
+  text-align: center;
+}
+
+.faqbox {
+  background-color: rgb(49, 49, 49);
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  margin: 34px auto;
+  cursor: pointer;
+  max-width: 60%;
+  transition: 0.4s all;
+}
+
+.faqbox:hover {
+  background-color: rgb(23, 23, 23);
+}
+
+/* footer start */
+
+footer {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 60vw;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+footer p {
+  padding: 34px 0;
+  font-size: 25px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-item {
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+}
+
+.footer-item a {
+  color: white;
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: 0.4s all;
+}
+
+.footer-item a:hover {
+  color: red;
+}
+/* ? Responsive tasarım */
+
+@media (max-width: 1000px) {
+  /* ekran genişliği 1000px üzerinde çıkana kadar bu özellikler uygulanacak */
+
+  .info-area {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .info-area h1 {
+    margin: 20px auto;
+    font-size: 30px;
+  }
+
+  .info-area p {
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 800px) {
+  .info-area h1 {
+    font-size: 30px;
+    margin-top: 40px;
+  }
+
+  .info-area p {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .info-img {
+    width: 100%;
+  }
+  .info-img img {
+    width: 100%;
+  }
+  .info-img video {
+    width: 100%;
+    height: auto;
+    top: 50px;
+    left: 0;
+    object-fit: cover;
+  }
+}
