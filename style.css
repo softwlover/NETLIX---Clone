@@ -14,10 +14,8 @@ body {
   background-image: url(img/banner.jpg);
   height: 100vh; /* bir ekran genişiliği kadar kaplayacak*/
   background-position: center;
-  background-size: (
-    1200px,
-    100vw
-  ); /* ekran 1200px' e kadar resmi kırparak 1200px'e sabitler , 1200px den büyük bir ekran olursa ekranın tamamını resim  büyüyerek  kaplar (100vw) */
+  background-size: (1200px,100vw);
+  /* ekran genişliği 1200px' e kadar resmi kırparak 1200px'e sabitler , 1200px den büyük bir ekran olursa ekranın tamamını resim  büyüyerek  kaplar (100vw) */
   background-repeat: no-repeat;
   position: relative;
 }
@@ -25,7 +23,8 @@ body {
 /* siyah kaplama */
 .cover {
   background-color: black;
-  position: absolute;
+  position: absolute; 
+  /* cover'ın kapsayıcısı main olduğu için main'e relative verdim. cover'da  absolute vererek  cover'ı mainin içinde posizyonlamayı açtım */
   top: 0;
   left: 0;
   right: 0;
